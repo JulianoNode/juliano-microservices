@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AppDocker {
 
 	public static void main(String[] args) {
+		Recursos recursos = new Recursos();		
 		SpringApplication.run(AppDocker.class, args);
+		
+		recursos.links();
 	}
 
 }
