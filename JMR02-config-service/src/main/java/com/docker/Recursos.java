@@ -23,5 +23,7 @@ public class Recursos {
 						   +"http://localhost:8888/greeting-service/prod \n"
 						   +"http://localhost:8888/greeting-service/qa \n");		
 	}
+	
+	
 
 }
