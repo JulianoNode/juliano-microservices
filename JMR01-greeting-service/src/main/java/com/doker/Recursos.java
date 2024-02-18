@@ -5,7 +5,8 @@ public class Recursos {
 	public void links() {
 		//URL1();
 		//URL2();	
-		URL3();
+		//URL3();
+		URL4();
 	}
 	
 	public void URL1() {		
@@ -31,6 +32,14 @@ public class Recursos {
 						   +"http://localhost:8080/greeting?name=Juliano \n"
 						   +"http://localhost:8888/greeting-service/dev \n"
 						   +"http://localhost:8888/greeting-service/qa \n");		
+	}
+	public void URL4() {		
+		System.out.println("\n\t *Links para teste URL4()*\n\n"
+						   +"http://localhost:8080/greeting \n"
+						   +"http://localhost:8080/actuator \n"
+						   +"Execuratar no app postimen \n"
+						   +"http://localhost:8080/actuator/refresh \n");					   
+						  		
 	}
 
 }

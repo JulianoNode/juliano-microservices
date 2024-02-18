@@ -14,6 +14,7 @@ management:
       exposure:
         include:
         - '*'
+     #  - refresh                         expondo o endpoint refresh  
 greeting-service:
   greeting: "Olá"
   default-value: "Mundo application.yml-*"
