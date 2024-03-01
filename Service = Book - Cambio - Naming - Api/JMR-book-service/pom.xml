@@ -12,7 +12,7 @@
 	<groupId>com.docker</groupId>
 	<artifactId>book-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JMR05-book-service</name>
+	<name>JMR-book-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
