@@ -18,10 +18,13 @@ public class URL_Teste {
 				+ "http://localhost:8100/book-service/3/BRL ");
 	}
 	
-	public String URL_ApiDocs() {
+	public void URL_ApiDocs() {
 		String api = "http://localhost:8100/v3/api-docs";
-		System.out.println("Url API DOCS Book de Teste \n" + api);
-		return api;
+		String swagger = "http://localhost:8100/swagger-ui/index.html";
+		
+		System.out.println("Url API DOCS Book de Teste \n" 
+							+ api +"\n"
+							+swagger);
 	}
 
 }
