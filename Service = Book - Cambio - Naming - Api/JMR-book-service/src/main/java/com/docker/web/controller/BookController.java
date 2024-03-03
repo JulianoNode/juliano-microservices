@@ -15,6 +15,10 @@ import com.docker.proxy.CambioProxy;
 import com.docker.repository.BookRepository;
 import com.docker.response.Cambio;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Book endpoint")
 @RestController
 @RequestMapping("book-service")
 public class BookController {
@@ -30,7 +34,8 @@ public class BookController {
 	
 	// http://localhost:8100/book-service/1/BRL
 	// http://localhost:8100/book-service/{id}/{currency}
-	@GetMapping(value = "/{id}/{currency}")	
+	@Operation(summary = "Find a specific book by your ID")
+	@GetMapping(value = "/{id}/{currency}")		
 	public Book findBook(
 			@PathVariable("id") Long id,
 			@PathVariable("currency") String currency
