@@ -22,3 +22,10 @@ spring:
     schemas: cambio_service
     user: root
     password: root
+  sleuth:
+    sampler:
+      probability: 1.0  #--> 0.1 – 0.05
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: cambio-service/v3/api-docs
