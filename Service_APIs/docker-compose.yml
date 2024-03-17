@@ -1,20 +1,32 @@
 version: '3.7'
 
 services:
-  # Image no docker-compose.yml
-  naming-server:
-    image: julianonode/naming-service:0.0.1-DOCKER
-    ports:
-      - 8761:8761
-    networks:
-      - JMR-network
-  # docker rum -p 9411:9411 opezipkin/zipkin:2.23.2
+  # Serviço do zipkin no docker-compose.yml
   zipkin-server:
     image: openzipkin/zipkin:2.23.2
     ports:
       - 9411:9411
     networks:
-      - JMR-network   
+      - JMR-network 
+  # Image do naming-service no docker-compose.yml
+  naming-server:
+    image: julianonode/naming-service:0.0.1-DOCKER
+    ports:
+      - 8761:8761
+    networks:
+      - JMR-network  
+   # Image do api-gateway no docker-compose.yml
+  api-gateway:
+    image: julianonode/api-gateway:0.0.1-DOCKER
+    ports:
+      - 8765:8765
+    networks:
+      - JMR-network 
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
 networks:
   JMR-network:
     driver: bridge
