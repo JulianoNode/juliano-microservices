@@ -1,12 +1,20 @@
 version: '3.7'
 
 services:
+  # Image no docker-compose.yml
   naming-server:
     image: julianonode/naming-service:0.0.1-DOCKER
     ports:
       - 8761:8761
     networks:
       - JMR-network
+  # docker rum -p 9411:9411 opezipkin/zipkin:2.23.2
+  zipkin-server:
+    image: openzipkin/zipkin:2.23.2
+    ports:
+      - 9411:9411
+    networks:
+      - JMR-network   
 networks:
   JMR-network:
     driver: bridge
