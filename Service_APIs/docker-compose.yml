@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  naming-server:
+    image: julianonode/naming-service:0.0.1-DOCKER
+    ports:
+      - 8761:8761
+    networks:
+      - JMR-network
+networks:
+  JMR-network:
+    driver: bridge
